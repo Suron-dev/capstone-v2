@@ -1,67 +1,104 @@
+/* Global Styles */
 body {
     font-family: "Lato", sans-serif;
     font-weight: 700;
     font-style: normal;
 }
+
+/* Gradient Animation */
 .gradient {
-  background: linear-gradient(
-    -45deg,
-    rgba(200, 177, 0, 0.5),
-    rgba(254, 236, 55, 0.5),
-    rgba(51, 72, 143, 0.5),
-    rgba(7, 56, 230, 0.5)
-  );
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+    background: linear-gradient(
+            -45deg,
+            rgba(200, 177, 0, 0.5),
+            rgba(254, 236, 55, 0.5),
+            rgba(51, 72, 143, 0.5),
+            rgba(7, 56, 230, 0.5)
+    );
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
 }
 
 @keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+    0%, 100% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
 }
 
+/* Header Section */
 #header {
     height: 100vh; /* Full viewport height */
-    background: url(../images/cool-background.png) no-repeat center center; /* Center the background image */
-    background-size: cover; /* Make the background image cover the entire header */
-    display: flex; /* Use flexbox for centering content */
-    align-items: flex-start; /* Align items to the start (top) */
-    justify-content: flex-start; /* Align items to the left */
-    color: white; /* Text color */
-    text-align: left; /* Align text to the left */
-    padding: 20px; /* Add some padding */
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); /* Add a subtle shadow for depth */
+    background: url(../images/cool-background.png) no-repeat center center / cover; /* One-line shorthand */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 #header h1 {
-    font-size: 6rem; /* Adjust font size */
-    margin: 0; /* Remove default margin */
-    text-transform: uppercase; /* Convert text to uppercase */
-
+    font-size: 6rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin: 0;
+    text-transform: uppercase;
 }
 
+#header p {
+    font-size: 5rem;
+    font-weight: 700;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    #header h1 {
+        font-size: 5rem;
+        font-weight: 800;
+    }
+    #header p {
+        font-size: 4rem;
+        font-weight: 600;
+    }
+}
+
+@media (max-width: 768px) {
+    #header {
+        padding: 10px;
+    }
+    #header h1 {
+        font-size: 3rem;
+        font-weight: 800;
+    }
+    #header p {
+        font-size: 2rem;
+        font-weight: 600;
+    }
+}
+
+@media (max-width: 414px) {
+    #header h1 {
+        font-size: 2.8rem;
+        font-weight: 900;
+    }
+    #header p {
+        font-size: 2.5rem;
+        font-weight: 400;
+    }
+}
+
+/* Custom Font Classes */
 .cantata-one-regular {
     font-family: "Cantata One", serif;
     font-weight: 400;
     font-style: normal;
-  }
-
-#header p {
-    font-size: 4rem; /* Adjust paragraph font size */
-   
-    text-transform: uppercase; /* Convert text to uppercase */
 }
 
 .nothing-you-could-do-regular {
     font-family: "Nothing You Could Do", cursive;
     font-weight: 400;
     font-style: normal;
-  }
-
+}
